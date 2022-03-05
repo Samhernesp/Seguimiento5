@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShowListController">
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="400.0" prefWidth="312.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="74.0" prefWidth="312.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Historial de Registros">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <TableView fx:id="table" prefHeight="336.0" prefWidth="312.0">
+                    <columns>
+                      <TableColumn fx:id="dateColumn" prefWidth="116.79998779296875" text="Fecha" />
+                      <TableColumn fx:id="montoColumn" prefWidth="108.0" text="Monto" />
+                        <TableColumn fx:id="tipoColumn" prefWidth="88.0" text="Tipo" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox prefHeight="400.0" prefWidth="287.0">
+               <children>
+                  <HBox prefHeight="178.0" prefWidth="287.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="178.0" prefWidth="198.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="77.0" prefWidth="142.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filtrar registros:">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Desde:" />
+                              <DatePicker prefHeight="26.0" prefWidth="125.0" />
+                              <Button mnemonicParsing="false" text="Filtrar">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="178.0" prefWidth="202.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hasta:">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <DatePicker prefHeight="26.0" prefWidth="129.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Eliminar registro:">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione el registro en la tabla">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin></Text>
+                        <Button fx:id="eliminarButton" mnemonicParsing="false" onAction="#delete" text="Eliminar">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin></Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
